@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let timeinSecs=2*60;
+        const handleOnClick=()=>{
+            const min=Math.floor((timeinSecs/60))
+            const sec=timeinSecs%60;
+            document.getElementById('timer').innerHTML=`${min}:${sec} left`
+            timeinSecs--;
+
+            if(timeinSecs<0)
+            {
+                alert('Timer up')
+            }else{
+                setTimeout(handleOnClick,1000)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>Click on start button to start the counter </p>
+        <button type="button" onclick='handleOnClick()'>Start Counter</button>
+        <p id="timer"></p>
+    </div>
+</body>
+</html>
